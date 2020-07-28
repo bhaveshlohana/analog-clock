@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.circle {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+  border: 8px solid grey;
+  border-radius: 50%;
+  background-color: black;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: #95A5A6;
+}
+.circle::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hand {
+  --rotate: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotate) * 1deg));
+  transform-origin: bottom;
+  z-index: 8;
+}
+.hour {
+  width: 8px;
+  height: 25%;
+  background-color: white;
+  border-top-left-radius: 35%;
+  border-top-right-radius: 35%;
+}
+.minute {
+  width: 6px;
+  height: 37%;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.second {
+  width: 3px;
+  height: 42%;
+  background-color: red;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.twelve {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: white;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.three {
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background: white;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+}
+
+.six {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: white;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.nine {
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+}
